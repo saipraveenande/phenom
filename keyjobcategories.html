@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/3e46bbb56d.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+<link rel = "stylesheet" href = "carrearsite.css" />
+    <link rel = "icon" href = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsJCQcJCQcJCQkJCwkJCQkJCQsJCwsMCwsLDA0QDBEODQ4MEhkSJRodJR0ZHxwpKRYlNzU2GioyPi0pMBk7IRP/2wBDAQcICAsJCxULCxUsHRkdLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCz/wAARCAB/AVEDASIAAhEBAxEB/8QAHAABAAICAwEAAAAAAAAAAAAAAAUHBAYBAwgC/8QATRAAAQMDAgIFBwcHCgQHAAAAAQACAwQFERIhBjETQVFhgQcUIjJxkaEjNVJydLKzNDZCc3Wx0RUWFzNigpKTwfBDVbTCJUVTlMTh8f/EABsBAQACAwEBAAAAAAAAAAAAAAABBQIDBAYH/8QAKxEAAgICAQMDAwQDAQAAAAAAAAECAwQRIQUSMUFRcRMygTNCYbEUI5Hw/9oADAMBAAIRAxEAPwC20REAXXLJFCySWV7I4426nveQ1rQOskrl72RsfJI5rY2Nc97nHDWtaMkklV5erzNdJtLC5lFE75CI7F5H/FkHaeodXt3W+ml2vS8Ffn50MOHc+W/CJe48WkOdFbYmkA484nBwe9kf8T4LWqqur612uqnfKR6uoNDR7A0ALGXDi1oBcQAe04VxXTCv7UeIyc6/Jf8AsfHt6f8ADlZVJX19C7VSzuizzADS13tDgQsXBxnS/T9Isfp9+MICDuCCO0LY0pcPk5IylW+5PTNvt/FrXFsdyjazkPOIAdA75Gcx3ke5bWySKRjHxva9j2hzHMIc1zT1gjZVKpiyXqW2TNilc51DI75VnMwkn+sj/wC4f6jevvxFrurPSdP6zNSVeRyvf2+SxFyvljmva1zSCxzQ5rmnIIO4IX0qw9anvkIiISEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQHKIiA4REQGq8W17o4ae3xuwaj5aox/6TThrfE/d71pileIJzPd7geqJ7advcImhp+OSort7le40FCtHzzqd7uypN+nC/Bl2+31VyqW01PgbappXA6IY+Wo45k9QW+W6xWq3taWQtln/AE55wHyk92dh4Lp4Zom0lsp5C0dNWAVUxxv6Y9BvgMfHtU4q7IyJTk4p8Hpul9NrprjbNbk+efQ+dLcYwMdmNlFXCw2qva8mFsNQQdM8ADH5/tAbEe1S6LljJxe0y3sprtj2zW0VZX0NTbqh9PUAagNTHtB0SMJwHNz8exYq3/ieibU22ScAdLRHpmHG+jYPb7Mb+C0BXePb9WG35PBdSxFiXOC8PlG7cJV5mppaCR2X0mHQZ5mB5Po/3Tt7CFs6rnhyYw3iiAJ0ziand3hzC8fEBWKFWZUFCzj1PV9HyHdjJP8AbwcoiLlLgIiIAiJkZwgCJnfCIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiA5REQHCIiAq66fOd1+21X4jlhOyWPA5lrgPcsy5/OV1+21X4jliL0UPtXwfMb/1Z/L/ALLSt7muobe5nqupacj2dGFlrWOFLkyWm/k+RwE1KCYgTu+AnIx9Xke7C2dUNsXCbTPomHdG+iM4+wRFwtZ1GFdXNbbLs55Ab5lUDxMZAVYLdeK7iyOnbbY3AyzlklQB+hE06mtPe4j3Dv30pW+FFqDfueJ67dGy9Qj+1cmdZw43a0Ac/OmnbsDHkqzlX/C1OZ7tHLj0KSCSZ3c9/wAmwfe9ysBcua9zSRb9Cg1Q5P1ZyidSjI79YJq11uiuVI+ta5zDA2QF5e3mxp5Fw3yAeruXEX5Joo+uvVjtp019xo6d+x6OWVolwRkHox6XwXRScScMVsjYqW7UT5HHDWOlEb3HOMNbJglAS61Tj2trKGwSOpJnwvqKunpZJInFsgifqc4McNxnGD3FbWtM8o/5vxftSk+7IpXkg13ycV9ebtW0L6iV9LJQS1PRSPc9rJo5Ymh7NROMhxz2+CtVU/5O3xxX6rlke1kUdnq3SPe4NYwdPT7ucdgrEfxbwgyTonXqh1Zx6Mhc3P12gt+KmS5CJxF009VSVkQnpaiGeEnAkgkbIzPPGWkjK7liSERYlZcrXb2h9dW0tK0jLfOJmRl31Q45PgEBlooSLivhKZ4jjvNDrJwBJJ0YJ9sgA+KmWuY9rXsc1zHgOa5pBa4EZBBGyA+kRRovthdXm2C5Uhrw8xmnEg19INyzPLV3ZygJJFE1fEnDNBI6Kru1FHK0kOjEoe9pGxDmx5I8Vk0N1tFyDjQV1LU6RlzYJWue0drmesPcgM1ERAEXRU1dHRxGarqIKeIHHSVEjI2Z54y8gZUU3i3hB7+jF5otWcZc9zW/43DT8UBOIviOWKaNksUkckTxlj4nB7HDta5uy+0ARRtVfbBRVUdDV3Klgq5NGmKSQBw1+rr6hnqyQldfbBbXGOuudJBKOcb5WmUe2NuXfBASSKNob7YLk8R0NypJ5DyjbKBKds7Ruw74KRJABJIAAJJJGAB2oDlFCz8U8KUzzHLeKEPBwQyXpcHvMYIWfRXG2XBhkoaymqWNxqNPKx+nP0gDkeKAy0TI7R70QBERAVbc/nK6/bar8RyxFl3P5yuv22q/EcsReih9q+D5jf8Aqy+X/Z9xSywSRzQvdHLE7VG9pw5ru7/VbbQcWwlrWXCF7ZAADNANTHd7mcx4ZWn/ALkWFtMbfuRuxc27Ek/pv8ehYv8AOTh7GfPR7BDPn3aFE1/Fsel7LbC7WRgT1AADe9sfMnszj2LUEWiOFWnvyWFvW8mcdR0vg+pJJJXySyvc+SRxe97zlznHrJXySACTyA/3hMgY57kAYGSSdgAB1rbLBw9IHx19xj0lhD6WmeMlruYklHb2Dq9uw32WRqjtldi4tmXZ2w/LJbhy2Ot1CHTN01VWRPODzYMYZH4Dn3kqbXAXKopSc5OT9T6HRTGmtVw8I6qgubT1LmkhzYZS0jmCGEghedYXyRuhlie9ksZZJG9ji17Ht9IOa4bgjqK9E1P5NVfqJvuFedGNkk6GOP8ArJXQwx5GRrlc2NufEqYmxmZRW+7XaeZlvo6msnDtU7owCGl++ZZpCGgnnu7K7rjYL/a2CS42yohhJA6U9HLCCdgHSQuc0d2cK8LTaqKzW+lt9IwNigYNbv05pSPTlkPMucdyf4LMkiilZJHKxr45GuZIx4DmPY4YLXNOxBUdw0VNwjxhU26op7bdJ3y2yZ7IYZZnFz6KRx0t9M7mM7Ag8uY22W0+Ub834v2pSfdkVbcRWqO03i6W1mTBG8GDJJIgmYJWtJO+wOnwW332sluHk94dqpjqmdU0UUzjuXSQdNA5x9unKnXOySuyWta4uIDQN88sc987KWh4c4qqKcVUNlr3QFoc0ljGPc075bE9wkI/uqQ4Gt9NceI6UVLGvioqaevbG8Za6eN0bIyR/ZLtQ7wOxXVj2qXLRCR5+ttzu1kq/OaGSSCeN2ieGRrhHLpO8NREcf6EZ2IV32S7017ttLcYAWiUFssRILoZ2HS+Mkdh5d2D1rQvKXQU0NTabhGwNmrG1EFSWgDpOgDHMee/BIz7OxZXkvmkMXEdMSejjnoqhg6g6WN8bsf4G+5YvlbJJzjDif8AkGmjgpdLrnWNcYNYDm08QOkzvb19jR1ntDcGq6Sh4h4jrZzTRT11Vs6qqJ5AGRZ5dLNIcDuA322GAsri6skreIr29x2gqDRRA8msph0eB3Z1HxWw2PjWx2O10dugtNa4xM11EokpwZ6l/pSSu3zueXdgdSlceCPJF1XAPF9LF0ogpKoBpc6OjqC6UdwbMxmfArEsPEd24cqtHyz6JsrmVtBLqGMHDjG13qyDwzjB55G5f0m20/8AlNd/m0/8VqPFN7tN+qKaspaCelq2tMdS+V0RbOwAaC4R76m8s9m3VsW35BdFLU01ZT01VTyCSCoijmhe3k9j26gV52Ln63O1OLy9z9WTqLi7Oc88q2/JvVPmsUtO8kiguFRBHnqjkayoDfAuKqPTrcI8lolljhJHMCSQRkj3pEMkrZYOILvG6W2W6aaBpc3py6KGFzmnBax8zmgkdeM/w6ailvFlrI21EVVQV0XysL86JMA41xSsJaR1HBPer+pqano6enpaeNscFPEyGFjRgNYwBoAWs8fUlPUcOVlRIwGWhlpp6d+BqY58zIXAHnghxz/9J3bJ0fXBvEj79RTR1WkXKh0NqSwBrZ4350TtaNhnBDh2jsKkeIr5TWC3S1kjRJO89DRwk46acgkA430jcu9nad618nsskfErY2nDZ7bWtkHaGOikHxWR5R6uSa9UtHk9FRULHBvV0tQ4vc73BoUa5GzV62uu97rmSVT6itrZ3FkEUbHSOA56IIWZwB14HeT1rNk4U4wjh84fZqzo8ai1joJJQO0xRvL/AILe/Jva4IbXPd3MBq7hPPCyQgEspad5iEbDzALg5x7duxb1hS5a4I0UNY+ILpw/UiWlc59M5+KujeSIpgDh2Gn1XjqOOrB2V4UFdSXOjpK6keXU9VEJIyRhw6i1w6iDkHvCrfykWmmpqm33WCMMdWmSnrA0YD5Y2h7JCB1kagfYFIeTGrlfSXqgccspamGphH0W1LXBwHi0nxR8rYRo3EhLuIOIy4k/+JVIJO+zXaQPAABY9utN6vEsrLZQzVLmH5eQFjIo3EZxJNK4N1d2Sffv3cTEtvvErvo3Gud7cOJVycM0NNQWCxwQMABoqeeQjnJNMwSyPce0kn/YUt6QRS1wtF5tEkLblRTUz3nMMhLXRuc30vk5oiW5HPGrKya7iXiC4UFNbqutkfTQNcHnOJKkZ9E1TwfS09XvOTurh4mo6atsN7inYHBlFUVMZIBLJoGGVj294I/3lUpaKWCvu1jopxmCruFLFO36UZdqcw9xAwfaiewzJt/DfE90gFVQWyaSmI1RyvfDAyUdsXTOaSOwgY71ij+WLJXggVNvuNO4H0hokbncZHqlp8QV6Da1rWta1oa1oDWtaAAGjYAAdS0LylUlMbZba7QBUQ1zaUPA3MM0cj3McR1ZaCPHt3ju2NGm/wA8eMv+bSf5UP8ABFr+B2fEostIjbPSCIi1GZVtz+crr9tqvxHLCf6j/qu/cs25/OV1+21X4jlhP9ST6jv3L0UPtXwfMb/1ZfL/ALLAm4ftdxpqSVzXQ1DqaAmaDDXOPRt9dp9E+IUJPwhdIyfN56adu+Ok1Qv8dnD4rcqP8kovs0H3GrIVKsiyD0me5s6ZjZEVKUdP+CuzwzxDnHm0PtNRHj4b/BZUHCF1kI85qKaBh59Frmf8Q1q3pFseZYzRHoeLF7e3+SIttgtdtIkYx01SP+PUYc8Hl6AxpHgFLY9i5RcspOT3JlvVTCmPZWtIIiLE2nTU/k1V+om+4V51ie+MwSsxrifDMzPLXE5sjc+IXoqp/Jqr9RN9wrzpG1z+iY1pc95jjY1oJc578Na0Ab5JOAs4mLPQdrudFd6Gmr6SQOinaCRn0opAPTikHU5p2KzHvjjZJJI9jI42ufI97g1jGNBJc5x2AHWvP1BdbxZp5vMauopJw7TURcsvb6OJoJQW5He1d9z4kv8AdIxFcrlJJBkfJARQQuIORqZEGgnszlR2jZzxLdYbrebrco8+bve1sBIILoIGCNr8HffGrxW23ujloPJ5w5SzDEzaiilladi184lnLT7NWFH8IcH1d0qKa5XSB8NqheyeKGdpbLXyNOpmWOGREDucj0uWMbrbPKM1x4eaQCQy5UbnkcmtIewE+JA8VLfINS8m/wCcVR+yKv8AHp1b6qHybtJ4hqiAcMtFQXHBw3XPAG5Pfg49it5Yy8korryn/wBTw7+urvuRrp8l/r8S+y2f/IXf5Tweg4ddg4FRWtzg41GNhAz27H3dy6fJcCTxM7B0g22PPVqDZnEZ8R7+9ZftHqarxdRyUXEd6Y7OJ6g1sZ+kyp+U29h1DwWy8LcL8G3+1w1Mnnnn8PyNwjZWyt0zDk8MB2a8bt27R1LZOMeGP5epop6Usbc6RrhT6zpZURE6nQPd1drT1HuccVNHNd7JXO0PqrfcIcte30opQM5Ic07Ob7we9FyuCC0/6OeEPoXD/wB9Mvg+T/gkSthLqsTOBc2M3GQSFvaG5z8FpD+OuM3RlhuEbBgh0jaWma/GMZ1FuPgFhWW237iK5w1FIZ3vZVQ1FTdJXPLICx4cXdMd3P8AotB9wTT9RtF02m0Wyy0rKK3Q9FAHvldlznvkkfjU+R7yXEnA6+ruXn9n9dT/AGum/HavR46l5yYx/nNNHpd0hr6aIMA9IyectboA55zt/wDiRDPRvatc44/Na+fVpP8Aqolse2/tK1zjfJ4WvuATiOmccdQbUxOJ8OZWKMiu+APzopP2fcP3RrL8o9I+G+U9Xg9HW0MWHdXSU7nMc3wBafFYvk/BPFFPgE6LdXudgeq0mNoJVlcS2GDiC3OpXObFUxOM1FOW5EcwGMOxvpdycPHmFlvTMfQgvJxcoJ7RLay4Cpt9RM8MOznU9Q8yteBnkCXNPsHat58V58nhvFhrxHMKihuEJPRvY9zHEHYuilbs5p7j3HsUnJxnxlLEYXXaQNLdJdFDTRy/5kcYd7iEcRs2Dyk3OnnqLba4XB76MyVNXpOQySRgZHGcdeMk+0dqzPJhSyNpr9XEYjqKqCkiP0hTMc55Hi/HgtFs1muvEVWYKIPLNeqtr5Muhpw45c5zz6zzvhuST14G6vG2W6jtNDR2+kaW09LEI2ZOXOOcue49rjkn2qHwtE/yUbxR898Ufb6/7xV42f5osn7NofwGKj+KQW3vinUCNNdXOdkYIBy4HftGCPb3q8LQ1zbTZmuBDm26ia4HYgiFgIIR+Aji9fM19/Zlw/AeqR4b/OHhj9p03/cruvILrPfGtBLnWyvDQ0ZJJgfgAKkeGfS4i4WDfSJuNO4ad8ta1ziR3AblI+Ay/QtK8pPzBS/tam/BmW6haV5SQTYKc4OG3WlLj1AGKZuT4kDxULyGVIiej9Ie8fxRbTE9IIiLSZlW3P5yuv22q/EcsN/qSfVd+5T/ABDaqumraiqjifJS1LzNrY0u6N7t3NeBvz3B/goyhttbc5WwwRSdG4hs07mOEcUefSOo7E88BXsLI/TT36HznIxrf8iVfby2yyqP8kovs0H4bVkL4jY2NkcbfVY1rG+xoAC+1Rt7Z9DgtRSYREUGYREQBERAdNT+TVX6ib7hXnqh/LLT9vt3/URr0RKzpIpo846SN7M4zjU0jOFStv4R4qF3oKSS2zxspq2mknq36fNRFBK2QvZIDvkDYDfffCyiYst2us1juRzX22jqXcg+eGNzwOwPI1fFdNJw3wvQvEtJZ6CKUHIkEDHSNPaHvBI96lVysTIYC6p6emqopqepijmgmYWSxSta+N7TzDmu2XaiAwbdaLNaGSR22hp6Vsrg+XoGAOkI5a3H0jjqyVnIiAxq2gt9xp30tfTQ1NO8hzo52hzdQ5OGeRHUVxQ2+3WynbS2+lhpqdpLhHA0NaXHm443JPWSspEAwFiVlttdxYI6+ipqpg9UVMTJNP1S4ZCy0QEFHwhwbE8SMsdv1A5GuISAexr8j4KajihiY2OKNkcbBhrI2tYxo7A1owvtEAUY2w8PNuBurbZRi4lxeakRN6XWdi8Hlq78Z71JogA2Xy9kcjJI5GNfHI1zHseA5rmuGC1wOxBX0iAj7dZbHaTObbb6akM5BlMEYa5+DkAnngdQ5KQwERAY1XQW6vi6GupKepi3IZURskaD2gOCh28E8EteJBZaUkHIDzK9n+B7y34LYUQHVDT0tNEyGnhihhYMMjhY2NjR3NYAF2oiAjaqxcP1tXFXVdtpJ6uLSWTTRNc8ad25zscdWc4UkiIAo2lsPD9DVzV1HbKSCrlDg+aGJrX4d62nGwz14xlSSIAuqopqWrglpqqGOanmbolima18b288Oa7ZdqICI/mxwr/yeg/yWophEB8g81zsq7oOI7tRENfIaqHO7KhxLx9STn78rZqXiqzTgCZ0lM/AyJmFzM9z48j4BdNmNZD02VWN1bHv4b7X7P8A9onThcABY0dytcoBjrqNwPZPHn3Erl9wtsYy+tpGj+1NGP8AVaNS8aLD6tb57l/0yUKhaniaxwA6J3VDx+jTMLgf77sM+K1y4cU3Kq1R0o80hO2YzqnPtkxt4DxW6vGsm+Fo4cjqmNQuZbfsuTfdh2+KdYVY092u9LKJYqudxByWTySSRP7nNeT71Y1BVsrqSkq2AgTxNk0nctJ2LfA5CXUSq02Rg9SrzW1FaaMnZNkRc5aDZNkRANk2REA2TZEQDZNkRANk2REA2TZEQDZNkRANk2REA2TZEQDZNkRANk2REA2TZEQDZNkRANk2REA2TZEQDZNkRANkXKICoUW61nCFHIXOo55Kc8xHIOmiz3ZIePeoGs4eu9Ex0kggfE39OOU7/wB1wBV7Xk1z8Pk+eX9MyaNuUdr3REYB6h4hMDsHuQ7EjrHNF0Fb3egRSNFZbrXgOp44dGcF8sukDwAJ+CnqTg+IFrq+rdJ2xUoMbfYZDl3uwuey+FfDZYY/T8jI5rjx7+DVIYaiplZT00bpZ3n0WMGcZ63nkB2kqzbZRmgoaKkLtToImte7qc8+k4juySvqkoaCijEdJBHCzr0D0nHtc47k+0rJ2yqzIyPq6SXCPW9N6asPc5PcmcomybLlLgImybIAibJsgCJsmyAImybIAibJsgCJsmyAImybIAibJsgCJsmyAImybIAibJsgCJsmyAImybIAibJsgCJsmyAImybIDlFxsiA//9k=" />
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="carrearsite.html">
+            <img src="https://tse2.mm.bing.net/th?id=OIP.ToCEN_u4kRxgxMP9BhnOdQAAAA&pid=Api&P=0&h=220" class="logo-img" />
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <div class="dropdown life-at-company">
+            
+                        <button class="btn  btn-secondary life-at-company-btn dropdown-toggle"  type="button" id="dropdownMenuButton1 dropdownMenuButton12" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Life At Company 
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                          <a class="dropdown-item" href="ourculture.html">Our Culture</a>
+                          <a class="dropdown-item" href="diversionandinclusion.html">Diversion and Inclusion</a>
+                        </div>
+                    </div> 
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown what-we-offer">
+                        <button class="btn btn-secondary what-we-offer-btn dropdown-toggle" type="button" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          What We Offer  
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                          <a class="dropdown-item" href="phenomenalbenifits.html">Phenomenal Benifits</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown job-search">
+                        <button class="btn btn-secondary job-search-btn dropdown-toggle" type="button" id="dropdownMenuButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Job Search 
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
+                          <!-- <a class="dropdown-item" href="#"></a> -->
+                          <a class="dropdown-item" href="browsejobs.html">Browse Jobs</a>
+                          <a class="dropdown-item" href="keyjobcategories.html">Key Job Categories</a>
+                          <a class="dropdown-item" href="ourhiringprocess.html">Our Hiring Process</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <div class="dropdown where-we-work">
+                        <button class="btn btn-secondary where-we-work-btn dropdown-toggle" type="button" id="dropdownMenuButton4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Where We Work 
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton4">
+                          <a class="dropdown-item" href="wherewework.html">Global Office Locations</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item nav-item1">
+                    <div class  = "employe-login">
+                        <a href = "employeelogin.html" class="employe-login-btn">
+                            Employee Login
+                           <!-- <a href = "" class = "employee-login-a">Employee Login  </a>  -->
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item nav-item1">
+                    <div class = "sign-up">
+
+                        <button type="button" class="sign-up-btn1" data-toggle="modal" data-target="#exampleModalCenter">
+                            <span class = "sign-up-icon"><i class="fa-solid fa-arrow-right-to-bracket sign-up-icon"></i></span>Sign Up 
+                          </button>
+                         
+                          <!-- Modal -->
+                          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content1 modal-content">
+                                <div class="modal-header1 modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">Sign Up</h5>
+                                  <button type="button" class="close close1" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class = "sign-up">
+                                        <div class = "sign-up-div">
+                                            <h2 class = "sign-up-h">
+                                                Sign up to save your personalized profile
+                                            </h2>
+                                        </div>
+                                        <div class = "sign-up-form">
+                                            <form>
+                                                <label class = "sign-up-label" for = "emailId">Email</label> <br/>
+                                                <input type = "email" id = "emailId" class = "sign-up-input" placeholder="name@email.com" /> <br/>
+                                                <label class = "sign-up-label" for = "password" >Password</label> <br/>
+                                                <input type = "password" id = "password" class = "sign-up-input" placeholder = "Password" /> <br/>
+                                                <p class = "password-instructor">
+                                                    Password must have at least 8 characters, one number, one lowercase, one uppercase
+                                                </p>
+                                                <button type = "submit" class = "sign-up-btn">
+                                                    Sign Up
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <div class = "social-account">
+                                            <p class = "social-account-p">
+                                                or use your social account
+                                            </p>
+                                            <div class = "social-account-icons-div d-flex flex-row">
+                                                <div class = "social-account-icons-div-icon1">
+                                                    <i class="fa-brands fa-linkedin-in social-icon"></i>
+                                                </div>
+                                                <div class = "social-account-icons-div-icon2">
+                                                    <i class="fa-brands fa-facebook social-icon"></i>
+                                                </div>
+                                                <div class = "social-account-icons-div-icon3">
+                                                    <i class="fa-brands fa-google social-icon"></i>
+                                                </div>
+                                            </div>
+                                            <p class = "already-have-an-account">Already  have an account? </p>
+                                             <a href = "#" class = "already-have-an-account-a">Sign In</a>
+                                            <div class = "terms-of-use-div">
+                                                <div class = "terms-of-use">
+                                                    <a href = "#" class = "terms-of-use-a">
+                                                        Terms Of Use 
+                                                    </a>
+                                                 </div>
+                                                 <div class = "privacy-policy">
+                                                    <a href = "#" class = "privacy-policy-a">
+                                                        Privacy Policy
+                                                    </a>
+                                                 </div>
+                                            </div>
+                                             
+                                        </div>
+                                    </div>
+                                </div>
+                        
+                              </div>
+                            </div>
+                          </div>
+                        
+                    </div>
+                </li>
+                <li class="nav-item nav-item1">
+                    <div class = "saved-jobs">
+                <a class = "saved-jobs1" href = "savedJobs.html"><span class = "saved-jobs-icon"><i class="fa-solid fa-cloud"></i></span>Saved Jobs (<span class = "saved-jobs-count" id = "savedJobsCount">0</span>)</a>
+            </div>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" id="navItem3" href="#payment-section1">Delivary and Payment</a>
+                </li> -->
+            </ul>
+        </div>
+    </nav>
+    
+    
+
+<div class = "key-job-categories-div">
+<p class = "key-job-categories-div-p">
+    Your Journey Starts Here
+</p>
+</div>
+
+<div class = "discover-your-purpose">
+    <div class = "discover-your-purpose-heading">
+        <h2 class = "discover-your-purpose-heading-h2">
+            Discover Your Purpose 
+        </h2>
+    </div>
+    <div class = "discover-your-purpose-jobs d-flex flex-column">
+        <div class = "discover-your-purpose-jobs-collection d-flex flex-row">
+            <div class = "discover-your-purpose-jobs-collection-job d-flex flex-row">
+                <div class = "discover-your-purpose-jobs-collection-job-icon">
+                    <img src = "https://cdn.phenompeople.com/CareerConnectResources/PMCNUS/images/1675868442554_CustomerSuccess1-1659478141711.png" class = "job-img" />
+                </div>
+                <div class = "discover-your-purpose-jobs-collection-job-content">
+                    <h2 class = "discover-your-purpose-jobs-collection-job-content-heading">
+                        Customer Success 
+                    </h2>
+                    <p class = "discover-your-purpose-jobs-collection-job-content-available-jobs-count">
+                        1 available job 
+                    </p>
+                </div>
+            </div>
+
+            <div class = "discover-your-purpose-jobs-collection-job d-flex flex-row">
+                <div class = "discover-your-purpose-jobs-collection-job-icon">
+                    <img src = "https://cdn.phenompeople.com/CareerConnectResources/PMCNUS/images/1675863133303_HR-1659478425611.png" class = "job-img" />
+                </div>
+                <div class = "discover-your-purpose-jobs-collection-job-content">
+                    <h2 class = "discover-your-purpose-jobs-collection-job-content-heading">
+                        Customer Support 
+                    </h2>
+                    <p class = "discover-your-purpose-jobs-collection-job-content-available-jobs-count">
+                        12 available job 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class = "discover-your-purpose-jobs-collection d-flex flex-row">
+            <div class = "discover-your-purpose-jobs-collection-job d-flex flex-row">
+                <div class = "discover-your-purpose-jobs-collection-job-icon">
+                    <img src = "https://cdn.phenompeople.com/CareerConnectResources/PMCNUS/images/1675868502366_Engineering-1658749889582.png" class = "job-img" />
+                </div>
+                <div class = "discover-your-purpose-jobs-collection-job-content">
+                    <h2 class = "discover-your-purpose-jobs-collection-job-content-heading">
+                        Engineering
+                    </h2>
+                    <p class = "discover-your-purpose-jobs-collection-job-content-available-jobs-count">
+                        38 available job 
+                    </p>
+                </div>
+            </div>
+
+            <div class = "discover-your-purpose-jobs-collection-job d-flex flex-row">
+                <div class = "discover-your-purpose-jobs-collection-job-icon">
+                    <img src = "https://cdn.phenompeople.com/CareerConnectResources/PMCNUS/images/1686584921329_HR-1659478425611.png" class = "job-img" />
+                </div>
+                <div class = "discover-your-purpose-jobs-collection-job-content">
+                    <h2 class = "discover-your-purpose-jobs-collection-job-content-heading">
+                        Human Resource
+                    </h2>
+                    <p class = "discover-your-purpose-jobs-collection-job-content-available-jobs-count">
+                        2 available job 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class = "discover-your-purpose-jobs-collection d-flex flex-row">
+            <div class = "discover-your-purpose-jobs-collection-job d-flex flex-row">
+                <div class = "discover-your-purpose-jobs-collection-job-icon">
+                    <img src = "https://cdn.phenompeople.com/CareerConnectResources/PMCNUS/images/1675868520530_Other-1658749892874.png" class = "job-img" />
+                </div>
+                <div class = "discover-your-purpose-jobs-collection-job-content">
+                    <h2 class = "discover-your-purpose-jobs-collection-job-content-heading">
+                        Implementation
+                    </h2>
+                    <p class = "discover-your-purpose-jobs-collection-job-content-available-jobs-count">
+                        1 available job 
+                    </p>
+                </div>
+            </div>
+
+            <div class = "discover-your-purpose-jobs-collection-job d-flex flex-row">
+                <div class = "discover-your-purpose-jobs-collection-job-icon">
+                    <img src = "https://cdn.phenompeople.com/CareerConnectResources/PMCNUS/images/1686579162147_Marketing-1658749891091.png" class = "job-img" />
+                </div>
+                <div class = "discover-your-purpose-jobs-collection-job-content">
+                    <h2 class = "discover-your-purpose-jobs-collection-job-content-heading">
+                        Marketing
+                    </h2>
+                    <p class = "discover-your-purpose-jobs-collection-job-content-available-jobs-count">
+                        3 available job 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>  
+    
+</div>
+
+<div class = "discover-your-purpose1 discover-your-purpose2" id = "discoverYourPurpose1">
+    <div class = "discover-your-purpose-jobs1 d-flex flex-column">
+        
+        <div class = "discover-your-purpose-jobs-collection1   d-flex flex-row">
+            <div class = "discover-your-purpose-jobs-collection-job1  d-flex flex-row">
+                <div class = "discover-your-purpose-jobs-collection-job-icon1">
+                    <img src = "https://cdn.phenompeople.com/CareerConnectResources/PMCNUS/images/1675868520530_Other-1658749892874.png" class = "job-img" />
+                </div>
+                <div class = "discover-your-purpose-jobs-collection-job-content1">
+                    <h2 class = "discover-your-purpose-jobs-collection-job-content-heading1">
+                        OGD 
+                    </h2>
+                    <p class = "discover-your-purpose-jobs-collection-job-content-available-jobs-count1">
+                        10 available job 
+                    </p>
+                </div>
+            </div>
+
+            <div class = "discover-your-purpose-jobs-collection-job1  d-flex flex-row">
+                <div class = "discover-your-purpose-jobs-collection-job-icon1">
+                    <img src = "https://cdn.phenompeople.com/CareerConnectResources/PMCNUS/images/1675868534874_PIE-1659478469209.png" class = "job-img" />
+                    <!-- <i class="fa-solid fa-rocket job-icon"></i> -->
+                </div>
+                <div class = "discover-your-purpose-jobs-collection-job-content1">
+                    <h2 class = "discover-your-purpose-jobs-collection-job-content-heading1">
+                        Platform Integration Engineering 
+                    </h2>
+                    <p class = "discover-your-purpose-jobs-collection-job-content-available-jobs-count1">
+                        9 available job 
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class = "discover-your-purpose-jobs-collection1  d-flex flex-row">
+            <div class = "discover-your-purpose-jobs-collection-job1  d-flex flex-row">
+                <div class = "discover-your-purpose-jobs-collection-job-icon1">
+                    <img src = "https://cdn.phenompeople.com/CareerConnectResources/PMCNUS/images/1675868548216_Product-1658749896113.png" class = "job-img" />
+                </div>
+                <div class = "discover-your-purpose-jobs-collection-job-content1">
+                    <h2 class = "discover-your-purpose-jobs-collection-job-content-heading1">
+                        Product
+                    </h2>
+                    <p class = "discover-your-purpose-jobs-collection-job-content-available-jobs-count1">
+                        7 available job 
+                    </p>
+                </div>
+            </div>
+
+            <div class = "discover-your-purpose-jobs-collection-job1 d-flex flex-row">
+                <div class = "discover-your-purpose-jobs-collection-job-icon1">
+                    <img src = "https://cdn.phenompeople.com/CareerConnectResources/PMCNUS/images/1675868561090_Sales-1658749897549.png" class = "job-img" />
+                </div>
+                <div class = "discover-your-purpose-jobs-collection-job-content1">
+                    <h2 class = "discover-your-purpose-jobs-collection-job-content-heading1">
+                        Sales 
+                    </h2>
+                    <p class = "discover-your-purpose-jobs-collection-job-content-available-jobs-count1">
+                        7 available job 
+                    </p>
+                </div>
+            </div>
+        </div> 
+    </div>    
+</div>
+
+<div class = "view-more">
+    <button class = "btn view-more-btn" id = "viewMoreJobs">View More</button>
+</div>
+
+<div class = "phenom-information d-flex flex-row">
+    <div class = "phenom-information-personal">
+        <a class = "phenom-information-personal-a" href = "carrearsite.html">Persoanl Information</a>
+    </div>
+    <div class = "phenom-information-cookies">
+        <a class = "phenom-information-cokkies-a" href = "carrearsite.html">Carrear Site Cookie Settings</a>
+    </div>
+  </div>
+
+
+    <div class = "phenom-footer-culture-page d-flex flex-column">
+        <div class = "phenom-footer-content d-flex flex-row">
+            <div class = "phenom-footer-content-div1">
+                <p class = "phenom-footer-content-div1-h">
+                    phenom 
+                </p>
+                <p class = "phenom-footer-content-div1-address">
+                    300 BrookSide Avenue <br/> Building 18 , Suite 200 ,Ambler PA <br /> 19002 <br /> TEL:999-8765-877
+                </p>
+            </div>
+            <div class = "phenom-footer-content-div2">
+                <p class = "phenom-footer-content-div2-job-search-p">
+                    Job Search 
+                </p>
+                <p class = "phenom-footer-content-div2-key-job-categories">
+                    Jey Job Categories 
+                </p>
+                <p class = "phenom-footer-content-div2-life-at-phenom">
+                    Life at Phenom 
+                </p>
+            </div>
+            <div class = "phenom-footer-content-div3">
+                <p class = "phenom-footer-content-div3-phenomenal-benifits">
+                    Phenomenal Benifits 
+                </p>
+                <p class = "phenom-footer-content-div3-diversity-and-inclusion">
+                    Diversity & Inclusion 
+                </p>
+                <p class = "phenom-footer-content-div3-our-culture">
+                    Our Culture 
+                </p>
+            </div>
+        </div>
+        <div class = "phenom-footer-social-media-icons d-flex flex-row">
+            <div class = "phenom-footer-social-media-icons-icon1">
+                <i class="fa-brands fa-facebook facebook"></i>
+            </div>
+            <div class = "phenom-footer-social-media-icons-icon1">
+                <i class="fa-brands fa-linkedin-in linkedin"></i>
+            </div>
+            <div class = "phenom-footer-social-media-icons-icon1">
+                <i class="fa-brands fa-threads threads"></i>
+            </div>
+            <div class = "phenom-footer-social-media-icons-icon1">
+                <i class="fa-brands fa-instagram instagram"></i>
+            </div>
+            
+            <div class = "phenom-footer-social-media-icons-icon1">
+                <i class="fa-brands fa-youtube youtube"></i>
+            </div>
+        </div>
+        
+        <div class = "footer-copy-rights">
+            <div class = "footer-copy-rights1">
+                <p class = "footer-copy-rights1-p">
+                    Copyright © 2023 Phenom PEOPLE, Inc.
+                </p>
+            </div>
+            <div class = "footer-copy-rights2 d-flex flex-row">
+                <div class = "footer-copy-rights2-privacy">
+                    <a href = "#" class = "footer-copy-rights2-privacy-a">Privacy</a>
+                </div>
+                <div class = "footer-copy-rights2-terms-of-use">
+                    <a href = "#" class = "footer-copy-rights2-privacy-terms-of-use-a">Terms Of Use</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type = "text/javascript">
+                var jobDetails = {
+    job1 : {
+        jobNumber :1,
+        title : "Product Marketing Manager",
+        location1:"Hyderabad, Telangana, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102901",
+        description:"You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence as the Intelligent Talent Experience category leader. You’ll be responsible..."
+    },
+    job2 : {
+        jobNumber :2,
+        title : "Product Marketing Manager",
+        location1:"Hyderabad, Telangana, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102873",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job3 : {
+        jobNumber :3,
+        title : "Director Product Management",
+        location1:"Hyderabad, Telangana, India",
+        category:"Product" ,
+        type:"Full-time",
+        jobid:"P-P-103093",
+        description:"The Director of Product Management will be responsible for leading the product management team and driving the product strategy and roadmap. This role will be responsible for developing and executing..."
+    },
+    job4 : {
+        jobNumber :4,
+        title : "IT Operations Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job5 : {
+        jobNumber :5,
+        title : "Sales Manager",
+        location1:"Hyderabad,Telanagana India",
+        category:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102457",
+        description:"5+ years enablement experience in a scaling SaaS environment. Bachelor's degree and or related experience. Experience delivering on sales methodologies and has enabled teams on it. High-level understa..."
+    },
+    job6 : {
+        jobNumber :6,
+        title : "strategic Accountant Director",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        role:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"The Strategic Account Director will be responsible for developing and managing relationships with key accounts, driving sales growth, and ensuring customer satisfaction. The ideal candidate will have a..."
+    },
+    job7 : {
+        jobNumber :7,
+        title : "Product Integration Engineer I",
+        location1:"Hyderabad, Telangana, India",
+        category:"Customer Support" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job8 : {
+        jobNumber :8,
+        title : "IT Operations Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job9 : {
+        jobNumber :9,
+        title : "Product Engineer",
+        location1:"Hyderabad,Telanagana India",
+        category:"Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Define long-term technical architecture to support SAAS offering, Lead and direct product development efforts. 10+ years of experience in software development, product development organization experience..."
+    },
+    job10 : {
+        jobNumber :10,
+        title : "Senior HRIS Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Human Resource" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Your expertise in data management, analysis, and visualization will contribute to global enhancing HR operations and decision-making processes. You will be responsible for ensuring compliance with global..."
+    },
+
+    job11 : {
+        jobNumber :11,
+        title : "OGD Manager",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"OGD" ,
+        type:"Full-time",
+        jobid:"P-102701",
+        description:"You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence as the Intelligent Talent Experience category leader. You’ll be responsible..."
+    },
+    job12 : {
+        jobNumber :12,
+        title : "Product Marketing Manager",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102873",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job13 : {
+        jobNumber :13,
+        title : "Director Product Management",
+        location1:"Hyderabad, Telangana, India",
+        category:"Implementation" ,
+        type:"Full-time",
+        jobid:"P-1076593",
+        description:"The Director of Product Management will be responsible for leading the product management team and driving the product strategy and roadmap. This role will be responsible for developing and executing..."
+    },
+    job14 : {
+        jobNumber :14,
+        title : "IT Operations Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-162906",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job15 : {
+        jobNumber :15,
+        title : "Sales Manager",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102457",
+        description:"5+ years enablement experience in a scaling SaaS environment. Bachelor's degree and or related experience. Experience delivering on sales methodologies and has enabled teams on it. High-level understa..."
+    },
+    job16 : {
+        jobNumber :16,
+        title : "strategic Accountant Director",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        role:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"The Strategic Account Director will be responsible for developing and managing relationships with key accounts, driving sales growth, and ensuring customer satisfaction. The ideal candidate will have a..."
+    },
+    job17 : {
+        jobNumber :17,
+        title : "Product Integration Engineer I",
+        location1:"Hyderabad, Telangana, India",
+        category:"Implementation" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job18 : {
+        jobNumber :18,
+        title : "IT Operations Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job19 : {
+        jobNumber :19,
+        title : "Product Engineer",
+        location1:"Hyderabad,Telanagana India",
+        category:"Implementation" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Define long-term technical architecture to support SAAS offering, Lead and direct product development efforts. 10+ years of experience in software development, product development organization experience..."
+    },
+    job20 : {
+        jobNumber :20,
+        title : "Senior HRIS Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Human Resource" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Your expertise in data management, analysis, and visualization will contribute to global enhancing HR operations and decision-making processes. You will be responsible for ensuring compliance with global..."
+    },
+
+    job21 : {
+        jobNumber :21,
+        title : "Product Marketing Manager",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102901",
+        description:"You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence as the Intelligent Talent Experience category leader. You’ll be responsible..."
+    },
+    job22 : {
+        jobNumber :22,
+        title : "Product Marketing Manager",
+        location1:"Hyderabad, Telangana, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102873",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job23 : {
+        jobNumber :23,
+        title : "Director Product Management",
+        location1:"Hyderabad, Telangana, India",
+        category:"Product" ,
+        type:"Full-time",
+        jobid:"P-P-103093",
+        description:"The Director of Product Management will be responsible for leading the product management team and driving the product strategy and roadmap. This role will be responsible for developing and executing..."
+    },
+    job24 : {
+        jobNumber :24,
+        title : "IT Operations Analyst",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job25 : {
+        jobNumber :25,
+        title : "Sales Manager",
+        location1:"Hyderabad,Telanagana India",
+        category:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102457",
+        description:"5+ years enablement experience in a scaling SaaS environment. Bachelor's degree and or related experience. Experience delivering on sales methodologies and has enabled teams on it. High-level understa..."
+    },
+    job26 : {
+        jobNumber :26,
+        title : "strategic Accountant Director",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        role:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"The Strategic Account Director will be responsible for developing and managing relationships with key accounts, driving sales growth, and ensuring customer satisfaction. The ideal candidate will have a..."
+    },
+    job27 : {
+        jobNumber :27,
+        title : "Product Integration Engineer I",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Customer Support" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job28 : {
+        jobNumber :28,
+        title : "IT Operations Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job29 : {
+        jobNumber :29,
+        title : "Product Engineer",
+        location1:"Hyderabad,Telanagana India",
+        category:"Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Define long-term technical architecture to support SAAS offering, Lead and direct product development efforts. 10+ years of experience in software development, product development organization experience..."
+    },
+    job30 : {
+        jobNumber :30,
+        title : "Senior HRIS Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Human Resource" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Your expertise in data management, analysis, and visualization will contribute to global enhancing HR operations and decision-making processes. You will be responsible for ensuring compliance with global..."
+    },
+
+    job31 : {
+        jobNumber :31,
+        title : "Product Marketing Manager",
+        location1:"Hyderabad, Telangana, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102901",
+        description:"You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence as the Intelligent Talent Experience category leader. You’ll be responsible..."
+    },
+    job32 : {
+        jobNumber :32,
+        title : "Product Marketing Manager",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102873",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job33 : {
+        jobNumber :33,
+        title : "Director Product Management",
+        location1:"Hyderabad, Telangana, India",
+        category:"Product" ,
+        type:"Full-time",
+        jobid:"P-P-103093",
+        description:"The Director of Product Management will be responsible for leading the product management team and driving the product strategy and roadmap. This role will be responsible for developing and executing..."
+    },
+    job34 : {
+        jobNumber :34,
+        title : "IT Operations Analyst",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job35 : {
+        jobNumber :35,
+        title : "Sales Manager",
+        location1:"Hyderabad,Telanagana India",
+        category:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102457",
+        description:"5+ years enablement experience in a scaling SaaS environment. Bachelor's degree and or related experience. Experience delivering on sales methodologies and has enabled teams on it. High-level understa..."
+    },
+    job36 : {
+        jobNumber :36,
+        title : "strategic Accountant Director",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        role:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"The Strategic Account Director will be responsible for developing and managing relationships with key accounts, driving sales growth, and ensuring customer satisfaction. The ideal candidate will have a..."
+    },
+    job37 : {
+        jobNumber :37,
+        title : "Product Integration Engineer I",
+        location1:"Hyderabad, Telangana, India",
+        category:"Customer Support" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job38 : {
+        jobNumber :38,
+        title : "IT Operations Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job39 : {
+        jobNumber :39,
+        title : "Product Engineer",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Define long-term technical architecture to support SAAS offering, Lead and direct product development efforts. 10+ years of experience in software development, product development organization experience..."
+    },
+    job40 : {
+        jobNumber :40,
+        title : "Senior HRIS Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Human Resource" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Your expertise in data management, analysis, and visualization will contribute to global enhancing HR operations and decision-making processes. You will be responsible for ensuring compliance with global..."
+    },
+
+    job41 : {
+        jobNumber :41,
+        title : "Product Marketing Manager",
+        location1:"Hyderabad, Telangana, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102901",
+        description:"You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence as the Intelligent Talent Experience category leader. You’ll be responsible..."
+    },
+    job42 : {
+        jobNumber :42,
+        title : "Product Marketing Manager",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102873",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job43 : {
+        jobNumber :43,
+        title : "Director Product Management",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Product" ,
+        type:"Full-time",
+        jobid:"P-P-103093",
+        description:"The Director of Product Management will be responsible for leading the product management team and driving the product strategy and roadmap. This role will be responsible for developing and executing..."
+    },
+    job44 : {
+        jobNumber :44,
+        title : "IT Operations Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job45 : {
+        jobNumber :45,
+        title : "Sales Manager",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102457",
+        description:"5+ years enablement experience in a scaling SaaS environment. Bachelor's degree and or related experience. Experience delivering on sales methodologies and has enabled teams on it. High-level understa..."
+    },
+    job46 : {
+        jobNumber :46,
+        title : "strategic Accountant Director",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        role:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"The Strategic Account Director will be responsible for developing and managing relationships with key accounts, driving sales growth, and ensuring customer satisfaction. The ideal candidate will have a..."
+    },
+    job47 : {
+        jobNumber :47,
+        title : "Product Integration Engineer I",
+        location1:"Hyderabad, Telangana, India",
+        category:"Customer Support" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job48 : {
+        jobNumber :48,
+        title : "IT Operations Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job49 : {
+        jobNumber :49,
+        title : "Product Engineer",
+        location1:"Hyderabad,Telanagana India",
+        category:"Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Define long-term technical architecture to support SAAS offering, Lead and direct product development efforts. 10+ years of experience in software development, product development organization experience..."
+    },
+    job50 : {
+        jobNumber :50,
+        title : "Senior HRIS Analyst",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Human Resource" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Your expertise in data management, analysis, and visualization will contribute to global enhancing HR operations and decision-making processes. You will be responsible for ensuring compliance with global..."
+    },
+
+    job51 : {
+        jobNumber :51,
+        title : "Product Marketing Manager",
+        location1:"Hyderabad, Telangana, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102901",
+        description:"You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence as the Intelligent Talent Experience category leader. You’ll be responsible..."
+    },
+    job52 : {
+        jobNumber :52,
+        title : "Product Marketing Manager",
+        location1:"Hyderabad, Telangana, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102873",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job53 : {
+        jobNumber :53,
+        title : "Director Product Management",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Product" ,
+        type:"Full-time",
+        jobid:"P-P-103093",
+        description:"The Director of Product Management will be responsible for leading the product management team and driving the product strategy and roadmap. This role will be responsible for developing and executing..."
+    },
+    job54 : {
+        jobNumber :54,
+        title : "IT Operations Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job55 : {
+        jobNumber :55,
+        title : "Sales Manager",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102457",
+        description:"5+ years enablement experience in a scaling SaaS environment. Bachelor's degree and or related experience. Experience delivering on sales methodologies and has enabled teams on it. High-level understa..."
+    },
+    job56 : {
+        jobNumber :56,
+        title : "strategic Accountant Director",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        role:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"The Strategic Account Director will be responsible for developing and managing relationships with key accounts, driving sales growth, and ensuring customer satisfaction. The ideal candidate will have a..."
+    },
+    job57 : {
+        jobNumber :57,
+        title : "Product Integration Engineer I",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Customer Support" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job58 : {
+        jobNumber :58,
+        title : "IT Operations Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job59 : {
+        jobNumber :59,
+        title : "Product Engineer",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Define long-term technical architecture to support SAAS offering, Lead and direct product development efforts. 10+ years of experience in software development, product development organization experience..."
+    },
+    job60 : {
+        jobNumber :60,
+        title : "Senior HRIS Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Human Resource" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Your expertise in data management, analysis, and visualization will contribute to global enhancing HR operations and decision-making processes. You will be responsible for ensuring compliance with global..."
+    },
+
+    job61 : {
+        jobNumber :61,
+        title : "Product Marketing Manager",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102901",
+        description:"You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence as the Intelligent Talent Experience category leader. You’ll be responsible..."
+    },
+    job62 : {
+        jobNumber :62,
+        title : "Product Marketing Manager",
+        location1:"Hyderabad, Telangana, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102873",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job63 : {
+        jobNumber :63,
+        title : "Director Product Management",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Product" ,
+        type:"Full-time",
+        jobid:"P-P-103093",
+        description:"The Director of Product Management will be responsible for leading the product management team and driving the product strategy and roadmap. This role will be responsible for developing and executing..."
+    },
+    job64 : {
+        jobNumber :64,
+        title : "IT Operations Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job65 : {
+        jobNumber :65,
+        title : "Sales Manager",
+        location1:"Hyderabad,Telanagana India",
+        category:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102457",
+        description:"5+ years enablement experience in a scaling SaaS environment. Bachelor's degree and or related experience. Experience delivering on sales methodologies and has enabled teams on it. High-level understa..."
+    },
+    job66 : {
+        jobNumber :66,
+        title : "strategic Accountant Director",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        role:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"The Strategic Account Director will be responsible for developing and managing relationships with key accounts, driving sales growth, and ensuring customer satisfaction. The ideal candidate will have a..."
+    },
+    job67 : {
+        jobNumber :67,
+        title : "Product Integration Engineer I",
+        location1:"Hyderabad, Telangana, India",
+        category:"Customer Support" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job68 : {
+        jobNumber :68,
+        title : "IT Operations Analyst",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job69 : {
+        jobNumber :69,
+        title : "Product Engineer",
+        location1:"Hyderabad,Telanagana India",
+        category:"Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Define long-term technical architecture to support SAAS offering, Lead and direct product development efforts. 10+ years of experience in software development, product development organization experience..."
+    },
+    job70 : {
+        jobNumber :70,
+        title : "Senior HRIS Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Human Resource" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Your expertise in data management, analysis, and visualization will contribute to global enhancing HR operations and decision-making processes. You will be responsible for ensuring compliance with global..."
+    },
+
+    job71 : {
+        jobNumber :71,
+        title : "Product Marketing Manager",
+        location1:"Hyderabad, Telangana, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102901",
+        description:"You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence as the Intelligent Talent Experience category leader. You’ll be responsible..."
+    },
+    job72 : {
+        jobNumber :72,
+        title : "Product Marketing Manager",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Marketing" ,
+        type:"Full-time",
+        jobid:"P-102873",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job73 : {
+        jobNumber :73,
+        title : "Director Product Management",
+        location1:"Hyderabad, Telangana, India",
+        category:"Product" ,
+        type:"Full-time",
+        jobid:"P-P-103093",
+        description:"The Director of Product Management will be responsible for leading the product management team and driving the product strategy and roadmap. This role will be responsible for developing and executing..."
+    },
+    job74 : {
+        jobNumber :74,
+        title : "IT Operations Analyst",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Do you have a passion for marketing, creative thinking, and product expertise? You'll be engaging with marketers, sales, account management, sales enablement, and product managers to support Phenom’s emergence..."
+    },
+    job75 : {
+        jobNumber :75,
+        title : "Sales Manager",
+        location1:"Hyderabad,Telanagana India",
+        category:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102457",
+        description:"5+ years enablement experience in a scaling SaaS environment. Bachelor's degree and or related experience. Experience delivering on sales methodologies and has enabled teams on it. High-level understa..."
+    },
+    job76 : {
+        jobNumber :76,
+        title : "strategic Accountant Director",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        role:"Sales" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"The Strategic Account Director will be responsible for developing and managing relationships with key accounts, driving sales growth, and ensuring customer satisfaction. The ideal candidate will have a..."
+    },
+    job77 : {
+        jobNumber :77,
+        title : "Product Integration Engineer I",
+        location1:"Hyderabad, Telangana, India",
+        category:"Customer Support" ,
+        type:"Full-time",
+        jobid:"P-102956",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job78 : {
+        jobNumber :78,
+        title : "IT Operations Analyst",
+        location1:"Visakhapatnam, Andhra Pradesh, India",
+        category:"Platform Integration Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"An IT operations analyst is a technical professional who studies IT systems and assists with maintenance, upgrading, and troubleshooting."
+    },
+    job79 : {
+        jobNumber :79,
+        title : "Product Engineer",
+        location1:"Hyderabad,Telanagana India",
+        category:"Engineering" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Define long-term technical architecture to support SAAS offering, Lead and direct product development efforts. 10+ years of experience in software development, product development organization experience..."
+    },
+    job80 : {
+        jobNumber :80,
+        title : "Senior HRIS Analyst",
+        location1:"Hyderabad,Telanagana India",
+        category:"Human Resource" ,
+        type:"Full-time",
+        jobid:"P-102906",
+        description:"Your expertise in data management, analysis, and visualization will contribute to global enhancing HR operations and decision-making processes. You will be responsible for ensuring compliance with global..."
+    }
+
+}
+
+
+        var jobLength6 = Object.keys(jobDetails).length ;
+var savedJobsCountElem = document.getElementById("savedJobsCount")  
+var savedJobsCount = 0 
+    for (var i=1;i<=jobLength6;i++) {
+    job = "job" + i
+    if (localStorage.getItem(job) == i) {
+        savedJobsCount = savedJobsCount+1 
+        console.log(savedJobsCount)
+    }
+}
+savedJobsCountElem.textContent = savedJobsCount ;
+var savedJobsCountElemVal = parseInt(savedJobsCountElem.textContent) 
+ 
+    </script>
+</body>
+</html>
